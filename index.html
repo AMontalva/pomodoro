@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" ng-app="pomodoro">
+<head>
+	<meta charset="UTF-8">
+	<title>Pomodoro</title>
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<div ng-controller = "CountController" id="clock"> 
+		Milliseconds: {{ count }} 
+		<br/>
+		Minutes: {{ minuteDisplay }}
+		<br/>
+		Seconds: {{ secondDisplay }}
+
+		<p ng-click="increment()">Start</p>
+	<div>
+
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
+
