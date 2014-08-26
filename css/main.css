@@ -2,11 +2,37 @@ body {
 	background-color: #DDEBDE;
 }
 
+h1 {
+	color: #454245;
+	font-size: 4em;
+	text-align: center;
+}
+
 #clock {
 	color: #454245;
 	font-size: 3em;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 100px;
+	margin-top: 40px;
 	width: 40%;
+	border: #454245 solid 5px;
+	text-align: center;
+}
+
+.button {
+	width: 140px;
+	height: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border-radius: 40px;
+	background-color:#454245;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+.button:hover {
+    background: #465245;
+    color: #EEEEEE;
 }

@@ -7,15 +7,13 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
-
+	<h1>Pompamodoro</h1>
 	<div ng-controller = "CountController" id="clock"> 
 		Milliseconds: {{ count }} 
-		<br/>
-		Minutes: {{ minuteDisplay }}
-		<br/>
-		Seconds: {{ secondDisplay }}
+		<p>{{ minDisplay }} : {{ secDisplay }}</p>
 
-		<p ng-click="increment()">Start</p>
+		<p ng-click="start()" class="button">Start</p>
+		<p ng-click="stop()" class="button">Stop</p>
 	<div>
 
 	<script type="text/javascript" src="js/angular.min.js"></script>
