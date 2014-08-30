@@ -3,8 +3,8 @@
     var app = angular.module("pomodoro", []);
 
     app.controller("CountController", function($scope) {        
-        // count = 1500000;
-        var totalMilliseconds = 120000;
+        var totalMilliseconds = 1500000;
+        // var totalMilliseconds = 120000;
         var count = totalMilliseconds; 
         var min = 60000;
         var timer;
@@ -18,9 +18,16 @@
         $scope.hideBreak = true;
         $scope.hideCancel = true;
 
-        var breakMilliseconds = 60000;
+        var breakMilliseconds = 300000;
+        // var breakMilliseconds = 60000;
         var breakDefault = breakMilliseconds/min;
         var breakBool = true;
+
+        // plays alarm when the time is 0:00
+        var play = function() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }        
 
         // controls which buttons will appear in view
         var hideButtons = function(startBtn, stopBtn, breakBtn, cancelBtn) {
@@ -33,7 +40,7 @@
         // displays minutes
         var minuteControl = function() {
             // starts off minute display
-            if($scope.secDisplay == 50) {
+            if($scope.secDisplay == 59) {
                 $scope.minDisplay = $scope.minDisplay - 1;
             }
         };
@@ -82,7 +89,8 @@
 
         // stops clock when it reaches 0:00
         var end = function() {
-            if($scope.secDisplay == 0 && $scope.minDisplay == 0) {
+            if($scope.secDisplay == 0 && $scope.minDisplay == 0) {                
+                play();
                 clearInterval(timer);
                 if(breakBool == true) {
                     hideButtons(true, true, false, false);
@@ -108,7 +116,7 @@
         var run = function() {
             timer = setInterval(function() {
                 // decrement the total time by one second
-                count = count - 10000;
+                count = count - 1000;
                 // displays seconds
                 secondControl();
                 // displays minutes

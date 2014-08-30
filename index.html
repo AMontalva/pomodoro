@@ -7,7 +7,10 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
+
+	<audio id="audio" src="audio/bells.mp3" ></audio>
 	<div ng-controller = "CountController" id="clock"> 
+		<div id="borderTop"></div>
 		<h1>Pompamodoro</h1>
 
 		<!-- <p>Milliseconds: {{ count }}</p> -->
@@ -16,7 +19,8 @@
 		<p ng-hide="hideStart" ng-click="start()" class="button">Start</p>
 		<p ng-hide="hideStop" ng-click="stop()" class="button">Stop</p>
 		<p ng-hide="hideBreak" ng-click="break()" class="button">Break</p>
-		<p ng-hide="hideCancel" ng-click="cancel()" class="button">Cancel</p>		
+		<p ng-hide="hideCancel" ng-click="cancel()" class="button">Cancel</p>	
+		<div id="borderBottom"></div>	
 	<div>
 
 	<script type="text/javascript" src="js/angular.min.js"></script>
